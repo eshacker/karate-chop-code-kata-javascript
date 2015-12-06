@@ -1,0 +1,5 @@
+div {
+ color: red;
+ &:hover{ color: purple; }
+ :hover { color: orange; }
+}

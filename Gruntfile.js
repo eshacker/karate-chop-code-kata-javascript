@@ -48,8 +48,8 @@ module.exports = function(grunt) {
       fonts: {
         files: [{expand: true, cwd: 'App/public/fonts/', src: ['*'], dest: 'Dist/public/fonts/'}]
       },
-      main: {
-        
+      images: {
+        files: [{expand: true, cwd: 'App/public/images', src: ['*'], dest: 'Dist/public/images/'}]
       }
     },
 
@@ -67,19 +67,15 @@ module.exports = function(grunt) {
 
   });
 
-  // Load the plugin that provides the "uglify" task.
+  
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-haml');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  // Default task(s).
-  grunt.registerTask('default', ['clean', 'uglify', 'sass', 'haml', 'copy:fonts', 'cssmin']);
+
+
+  grunt.registerTask('default', ['clean', 'uglify', 'sass', 'haml', 'copy:fonts', 'copy:images', 'cssmin']);
 
 };
-
-
-/* use grunt clean to clean dist. 
-    use grunt sass to generate styles.
-*/

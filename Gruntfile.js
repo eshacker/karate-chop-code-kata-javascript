@@ -9,15 +9,17 @@ module.exports = function(grunt) {
       },
       build: {
         expand: true,
-        cwd: 'App/public/javascripts/',
+        cwd: 'App/public/scripts/',
         src: '*.js',
-        dest: 'Dist/public/javascripts/',
+        dest: 'Dist/public/scripts/',
         ext: '.min.js',
         extDot: 'last'
-      }
+      },
     },
+
     clean: ["Dist/*"],
 
+/* I want sass to take care of SCSS and SASS files. */
     sass: {
       dist: {
         options: { 
@@ -26,9 +28,9 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'App/public/stylesheets/',
+          cwd: 'App/public/styles/',
           src: ['*.scss'],
-          dest: 'Dist/public/stylesheets/',
+          dest: 'Dist/public/styles/',
           ext: '.css'
         }]
       }
@@ -40,6 +42,27 @@ module.exports = function(grunt) {
           'Dist/index.html': 'App/index.haml',
         }
       }
+    },
+
+    copy: {
+      fonts: {
+        files: [{expand: true, cwd: 'App/public/fonts/', src: ['*'], dest: 'Dist/public/fonts/'}]
+      },
+      main: {
+        
+      }
+    },
+
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: 'App/public/styles/',
+          src: ['*.css', '!*.min.css', '!*.scss'],
+          dest: 'Dist/public/styles/',
+          ext: '.min.css'
+        }]
+      }
     }
 
   });
@@ -49,10 +72,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-haml');
-
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   // Default task(s).
-  grunt.registerTask('default', ['clean', 'uglify', 'sass', 'haml']);
-  
+  grunt.registerTask('default', ['clean', 'uglify', 'sass', 'haml', 'copy:fonts', 'cssmin']);
 
 };
 

@@ -17,11 +17,14 @@ module.exports = function(grunt) {
       },
     },
 
-    clean: ["Dist/*"],
+    clean: {
+      dist: ["Dist/*"],
+      autoclean: [ "App/public/styles/app.css"]
+    },
 
 /* I want sass to take care of SCSS and SASS files. */
     sass: {
-      dist: {
+      self: {
         options: { 
           style: 'expanded',
           sourcemap: 'none'
@@ -30,7 +33,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'App/public/styles/',
           src: ['*.scss'],
-          dest: 'Dist/public/styles/',
+          dest: 'App/public/styles/',
           ext: '.css'
         }]
       }
@@ -76,6 +79,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 
-  grunt.registerTask('default', ['clean', 'uglify', 'sass', 'haml', 'copy:fonts', 'copy:images', 'cssmin']);
-
+  grunt.registerTask('default', ['clean:dist', 'uglify', 'sass:self', 'haml', 'copy:fonts', 'copy:images', 'cssmin', 'clean:autoclean']);
+/* sass:self gotta come before cssmin */
 };

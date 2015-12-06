@@ -32,6 +32,14 @@ module.exports = function(grunt) {
           ext: '.css'
         }]
       }
+    },
+
+    haml: {
+      dist: {
+        files: {
+          'Dist/index.html': 'App/index.haml',
+        }
+      }
     }
 
   });
@@ -40,9 +48,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-haml');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean', 'uglify', 'sass']);
+  grunt.registerTask('default', ['clean', 'uglify', 'sass', 'haml']);
   
 
 };

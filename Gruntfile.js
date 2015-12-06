@@ -48,4 +48,6 @@ module.exports = function(grunt) {
 };
 
 
-/* use grunt clean to clean dist. */
+/* use grunt clean to clean dist. 
+    use grunt sass to generate styles.
+*/

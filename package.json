@@ -1,11 +1,12 @@
 {
   "name": "basic-bootstrap",
-  "version": "1.0.0",
-  "description": "Basic bootstrap application",
+  "version": "1.0.1",
+  "description": "Basic web-dev-bootstrap application",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords":"bootstrap, html, css, javascript, scss, basic, application, boilerplate, haml",
   "author": "Anubhav Saini",
   "license": "ISC",
   "devDependencies": {

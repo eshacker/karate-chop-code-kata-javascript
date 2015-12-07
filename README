@@ -1,0 +1,10 @@
+web-dev / basic-bootstrap
+---
+
+This is very basic place to start hand made application building. `npm install` it and `grunt` - it just works.
+
+HAML: use for building structure.
+JS: use for interactivity.
+SCSS: use for advanced styling.
+
+

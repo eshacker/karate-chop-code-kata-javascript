@@ -1,0 +1,79 @@
+@import 'colors';
+
+.border {
+    &.none {
+      border: none;
+    }
+    &.thin {
+      border-width: thin;
+      &.solid {
+        border-style: solid;
+        &.red {
+          border-color: $red;
+        }
+        &.green {
+          border-color: $green;
+        }
+        &.blue {
+          border-color: $blue;
+        }
+        &.yellow {
+          border-color: $yellow;
+        }
+        &.pink {
+          border-color: $pink;
+        }
+        &.orange {
+          border-color: $orange;
+        }
+      }
+    }
+    &.medium {
+      border-width: medium;
+      &.solid {
+        border-style: solid;
+        &.red {
+          border-color: $red;
+        }
+        &.green {
+          border-color: $green;
+        }
+        &.blue {
+          border-color: $blue;
+        }
+        &.yellow {
+          border-color: $yellow;
+        }
+        &.pink {
+          border-color: $pink;
+        }
+        &.orange {
+          border-color: $orange;
+        }
+      }
+    }
+    &.thick {
+      border-width: thick;
+      &.solid {
+        border-style: solid;
+        &.red {
+          border-color: $red;
+        }
+        &.green {
+          border-color: $green;
+        }
+        &.blue {
+          border-color: $blue;
+        }
+        &.yellow {
+          border-color: $yellow;
+        }
+        &.pink {
+          border-color: $pink;
+        }
+        &.orange {
+          border-color: $orange;
+        }
+      }
+    }
+}

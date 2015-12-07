@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 
     clean: {
       dist: ["Dist/*"],
-      autoclean: [ "App/public/styles/app.css"]
+      autoclean: [ "App/public/styles/*.css", "!App/public/styles/bootstrap.css"]
     },
 
 /* I want sass to take care of SCSS and SASS files. */

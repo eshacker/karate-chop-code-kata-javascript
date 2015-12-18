@@ -4,3 +4,5 @@ node_modules/
 .sass-cache/
 Dist/
 karate-chop.sublime-workspace
+.grunt/
+_SpecRunner.html

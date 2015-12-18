@@ -65,7 +65,18 @@ module.exports = function(grunt) {
           ext: '.min.css'
         }]
       }
-    }
+    },
+
+    jasmine: {
+      src: 'App/scripts/*.js',
+      options: {
+        specs: 'specs/*.js'
+      }
+    },
+
+    jshint: {
+      all: ["Gruntfile.js", "App/scripts/*.js", "build/scripts/*.js", "specs/*.js"]
+    },
 
   });
 
@@ -76,8 +87,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-haml');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
-
-  grunt.registerTask('default', ['clean:dist', 'uglify', 'sass:self', 'haml', 'copy:fonts', 'copy:images', 'cssmin']);
+  grunt.registerTask('test', ['jshint', 'jasmine']);
+  grunt.registerTask('default', ['clean:dist', 'jshint', 'jasmine', 'uglify', 'sass:self', 'haml', 'copy:fonts', 'copy:images', 'cssmin']);
 /* sass:self gotta come before cssmin */
 };

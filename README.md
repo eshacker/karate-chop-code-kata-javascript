@@ -73,10 +73,7 @@ Posted by Dave Thomas (@PragDave) Dec 28th, 2013
 Using repository
 ---
 
-`git clone https://github.com/learn-es/karate-chop-code-kata-javascript.git kcckj`
-`cd kcckj`
-`npm install`
-`npm test`
+`git clone https://github.com/learn-es/karate-chop-code-kata-javascript.git kcckj && cd kcckj && npm install && npm test && grunt`
 
 And that's pretty much it.
 

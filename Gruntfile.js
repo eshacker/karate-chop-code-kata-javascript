@@ -15,6 +15,14 @@ module.exports = function(grunt) {
         ext: '.min.js',
         extDot: 'last'
       },
+      buildAppScripts: {
+        expand: true,
+        cwd: 'App/public/scripts/app/',
+        src: '*.js',
+        dest: 'Dist/public/scripts/app/',
+        ext: '.min.js',
+        extDot: 'last'
+      }
     },
 
     clean: {

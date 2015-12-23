@@ -67,6 +67,8 @@ Here is the Test::Unit code I used when developing my methods. Feel free to add 
 
 Posted by Dave Thomas (@PragDave) Dec 28th, 2013 
 
+End of copied data.
+
 <hr />
 
 

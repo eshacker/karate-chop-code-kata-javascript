@@ -72,7 +72,5 @@ describe("Binary chop - code kata", function(){
 	  	expect(secondChop(evens, 7)).toBe(-1);
 	  });
   });
-
-
 });
 

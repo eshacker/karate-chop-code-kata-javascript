@@ -68,14 +68,14 @@ module.exports = function(grunt) {
     },
 
     jasmine: {
-      src: 'App/scripts/*.js',
+      src: 'App/public/scripts/**/*.js',
       options: {
-        specs: 'specs/*.js'
+        specs: 'specs/*.spec.js'
       }
     },
 
     jshint: {
-      all: ["Gruntfile.js", "App/scripts/*.js", "build/scripts/*.js", "specs/*.js"]
+      all: ["Gruntfile.js", "App/public/scripts/app/*.js", "Dist/public/scripts/app/*.min.js", "specs/*.spec.js"]
     },
 
   });

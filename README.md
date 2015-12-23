@@ -70,6 +70,20 @@ Posted by Dave Thomas (@PragDave) Dec 28th, 2013
 <hr />
 
 
+Using repository
+---
+
+`git clone https://github.com/learn-es/karate-chop-code-kata-javascript.git kcckj`
+`cd kcckj`
+`npm install`
+`npm test`
+
+And that's pretty much it.
+
+Let me know if I missed anything here.
+
+<hr />
+
 License: MIT for @eshacker's work.
 
 

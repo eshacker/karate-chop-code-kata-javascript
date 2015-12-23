@@ -17,11 +17,20 @@ var firstChop = function(arr, num) {
   }
 };
 
-var secondChop = function(arr, num) {
-  for(var i = 0; i < arr.length; i+=1){
-    if(arr[i] === num){
-      return i;
-    }
+var secondChop = function(arr, num, left, right) {
+  left = left === undefined ? 0 : left;
+  right = right === undefined ? arr.length : right;
+  var mid = Math.floor(left/2 + right/2);
+  if(left > right || arr.length === 0) {
+    return -1;
+  } else if(arr.length === 1 || left === right) {
+    return arr[0] === num ? 0 : -1;
+  } else if(arr[mid] === num) {
+    return mid;
+  } else if(arr[mid] > num) {
+    return secondChop(arr, num, left, mid-1);
+  } else if(arr[mid] < num) {
+    return secondChop(arr, num, mid+1, right);
   }
   return -1;
 };

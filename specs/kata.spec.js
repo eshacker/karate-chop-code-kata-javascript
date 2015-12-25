@@ -70,4 +70,39 @@ describe("Binary chop - code kata", function(){
       expect(secondChop(evens, 7)).toBe(-1);
     });
   });
+  describe("third chop", function(){
+    it("3 is at -1 in []", function(){
+      expect(thirdChop([], 3)).toBe(-1);
+    });
+    it("3 is at -1 in [1]", function(){
+      expect(thirdChop([1], 3)).toBe(-1);
+    });
+    it("1 is at  0 in [1]", function(){
+      expect(thirdChop([1], 1)).toBe(0);
+    });
+    it("0 is at -1 in [2, 4, 6]", function(){
+      expect(thirdChop(evens, 0)).toBe(-1);
+    });
+    it("1 is at -1 in [2, 4, 6]", function(){
+      expect(thirdChop(evens, 1)).toBe(-1);
+    });
+    it("2 is at  0 in [2, 4, 6]", function(){
+      expect(thirdChop(evens, 2)).toBe(0);
+    });
+    it("3 is at -1 in [2, 4, 6]", function(){
+      expect(thirdChop(evens, 3)).toBe(-1);
+    });
+    it("4 is at  1 in [2, 4, 6]", function(){
+      expect(thirdChop(evens, 4)).toBe(1);
+    });
+    it("5 is at -1 in [2, 4, 6]", function(){
+      expect(thirdChop(evens, 5)).toBe(-1);
+    });
+    it("6 is at  2 in [2, 4, 6]", function(){
+      expect(thirdChop(evens, 6)).toBe(2);
+    });
+    it("7 is at -1 in [2, 4, 6]", function(){
+      expect(thirdChop(evens, 7)).toBe(-1);
+    });
+  });
 });

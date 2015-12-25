@@ -18,20 +18,38 @@ var firstChop = function(arr, num) {
 };
 
 var secondChop = function(arr, num, left, right) {
-  left = left === undefined ? 0 : left;
-  right = right === undefined ? arr.length : right;
-  var mid = Math.floor(left/2 + right/2);
-  if(left > right || arr.length === 0) {
+  var l = left === undefined ? 0 : left;
+  var r = right === undefined ? arr.length : right;
+  var mid = Math.floor(l/2 + r/2);
+  if(l > r || arr.length === 0) {
     return -1;
-  } else if(arr.length === 1 || left === right) {
+  } else if(arr.length === 1 || l === r) {
     return arr[0] === num ? 0 : -1;
   } else if(arr[mid] === num) {
     return mid;
   } else if(arr[mid] > num) {
-    return secondChop(arr, num, left, mid-1);
+    return secondChop(arr, num, l, mid-1);
   } else if(arr[mid] < num) {
-    return secondChop(arr, num, mid+1, right);
+    return secondChop(arr, num, mid+1, r);
   }
   return -1;
 };
 
+var thirdChop = function(arr, num) {
+  var l = 0;
+  var r = arr.length;
+  var m = Math.floor(l/2 + r/2);
+  console.log(arr, num);
+  if(l > r || r === 0) {
+    return -1;
+  } else if(r === 1 && l === r){
+    return arr[0] === num ? 0 : -1;
+  } else if(arr[m] === num){
+    return m;
+  } else if(arr[m] > num) {
+    return thirdChop(arr.slice(l, m), num);
+  } else if(arr[m] < num) {
+    return thirdChop(arr.slice(m+1, r), num);
+  }
+  return -1;
+};

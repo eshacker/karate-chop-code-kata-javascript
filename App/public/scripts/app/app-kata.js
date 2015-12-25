@@ -39,12 +39,11 @@ var thirdChop = function(arr, num) {
   var l = 0;
   var r = arr.length;
   var m = Math.floor(l/2 + r/2);
-  console.log(arr, num);
   if(l > r || r === 0) {
     return -1;
-  } else if(r === 1 && l === r){
+  } else if(r === 1 && l === r) {
     return arr[0] === num ? 0 : -1;
-  } else if(arr[m] === num){
+  } else if(arr[m] === num) {
     return m;
   } else if(arr[m] > num) {
     return thirdChop(arr.slice(l, m), num);
